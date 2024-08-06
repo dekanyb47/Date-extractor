@@ -4,7 +4,7 @@ import re
 
 text = "07/04-2552 08.04.2552 29/02/290 29/02/2400 2.6.3851 31/04/2900 29/02/3712 31/01/2900"
 
-#Regex pattern that's being used on variable text. Years can range from 1000 to 9999
+#Regex pattern that's being used on variable text.
 date_regex = re.compile(r"""
     ([1-9]|0[1-9]|[12][0-9]|3[01])       #day
     ([/.-])                              #seperator
@@ -34,6 +34,7 @@ for i in matches:
 
     correct_dates.append(f"{day:02d}{sep}{month:02d}{sep}{year}")
 
+#Print both the incorrect and correct dates found. 
 print("Incorrect dates found:".center(40, '-'))
 for i in incorrect_dates:
     print(f" - {i}")
